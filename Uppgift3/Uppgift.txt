@@ -4,9 +4,17 @@ Bil("Bmw Z3")
 {
 	Vikt = 100
 	, Registrerades = DateTime.Now
-	, Elbil = True
+	, Elbil = true
+	, Registreringsnummer = "Abc 123"
 }
 
+Ska generera (i konsolen):
+Model: Bmw Z3
+Registreringsnummer: Abc 123
+Registrerades (tiden applikationen kördes)
+"Detta är en elbil!"
+
+Om Elbil är false skrivs inte sista raden ut!
 
 Programmet börjar med att skapa fyra objekt av typen bil och lägger in de i en lista. Se testdata ovan.
 Sedan itererar (loopar) du igenom listan av bilar och skriver ut informationen om dem. 
