@@ -49,8 +49,8 @@ startnummer.
        Ange minut för mål: 12 
        Ange sekund för mål: 24
        Ange startnummer: -1
-       Vinnare är startnr: 36
-       Tim: 0 Min: 37 Sek: 24
+       Startnummer 36 är vinnaren
+       Vinnande sluttid: 0 timmar 37 minuter 24 sekunder
        Antal tävlande: 2
        Programmet avslutas
        
@@ -80,13 +80,14 @@ ________________________________________________________________________________
 
 Tips
 
-	* För att räkna ut sluttiden räkna om klockslagen för start och mål till sekunder. Om klockslaget för start uttryckt i sekunder representeras av variabeln start och
+	* För att räkna ut sluttiden, räkna om klockslagen för start och mål till samma enhet exempelvis sekunder. Om klockslaget för start uttryckt i sekunder representeras av variabeln start och
 	  klockslaget för mål uttryckt i sekunder representeras av variabeln mal så är sluttid = mal - start. För att kontrollera om midnatt passeras mellan start och mål
-	  så kan villkoret start > mal användas.
+	  så kan då villkoret start > mal användas.
 	  
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 Extra uppgifter (frivilliga):
 
 	* Koda kontroller för korrekt inmatning av timmar (00-23), minuter (00-59) och sekunder (00-59). Om villkoren ej uppfylls ska ett felmeddelande visas och en ny inmatning måste göras.
+	
 	* Beräkna och skriv ut även den näst bästa sluttiden.

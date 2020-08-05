@@ -1,0 +1,82 @@
+Exempel på programkörningar
+
+Testdata 1:
+
+	Startnummer: 33
+	Ange timme för start: 17 
+	Ange minut för start: 30 
+	Ange sekund för start: 15
+	Ange timme för mål: 18 
+	Ange minut för mål: 22 
+	Ange sekund för mål: 35
+	Startnummer: 0
+	Startnummer 33 är vinnaren
+	Vinnande sluttid: 0 timmar 52 minuter 20 sekunder
+	Antal tävlande: 1
+	Programmet avslutas
+
+Testdata 2:
+ 
+	Startnummer? 33
+	Starttid? 00 30 15
+	Måltid? 19 22 35
+	Startnummer? -1
+	Vinnare är startnr: 33
+	Tim: 18 Min: 52 Sek: 20
+	Antal tävlande: 1
+	Programmet avslutas
+	
+Testdata 3:
+
+	Startnummer? 33
+	Starttid? 17 30 15
+	Måltid? 18 22 35
+	Startnummer? 14
+	Starttid? 23 35 00
+	Måltid? 0 12 24
+	Startnummer? 26
+	Starttid? 10 11 12
+	Måltid? 20 21 22
+	Startnummer? -1
+	Vinnare är startnr: 14
+	Tim: 0 Min: 37 Sek: 24
+	Antal tävlande: 3
+	Programmet avslutas
+	
+
+Testdata 4:
+	
+	Startnumren skall matas in med vinnaren först enligt följande ordning : 14, 26, 33. De skall ha samma tider som ovan.
+	
+Testdata 5:
+
+	Startnumren skall matas in med vinnaren sist enligt följande ordning: 26, 33, 14. De skall ha samma tider som ovan.
+
+Testdata 6:
+
+	Startnummer? 17
+	Starttid? 00 00 50
+	Måltid? 00 00 30
+	Startnummer? -1
+	Vinnare är startnr: 17
+	Tim: 23 Min: 59 Sek: 40
+	Antal tävlande: 1
+	Programmet avslutas
+
+Testdata 7:
+	Startnummer? -1
+	Inga tävlande
+	Programmet avslutas
+
+Testdata 8:
+	Startnummer? 15
+	Starttid? 10 00 00
+	Måltid? 11 00 00
+	Startnummer? 12
+	Starttid? 11 00 00
+	Måltid? 10 00 10
+	Startnummer? -1
+	Vinnare är startnr: 15
+	Tim: 1 Min: 0 Sek: 0
+	Antal tävlande: 2
+	Programmet avslutas
