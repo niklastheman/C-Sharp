@@ -1,0 +1,12 @@
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1_Korrekt.exe
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1_Korrekt.deps.json
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1_Korrekt.runtimeconfig.json
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1_Korrekt.runtimeconfig.dev.json
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1_Korrekt.dll
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1_Korrekt.pdb
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1_Korrekt.AssemblyInfoInputs.cache
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1_Korrekt.AssemblyInfo.cs
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1_Korrekt.csproj.CoreCompileInputs.cache
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1_Korrekt.dll
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1_Korrekt.pdb
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1_Korrekt.genruntimeconfig.cache

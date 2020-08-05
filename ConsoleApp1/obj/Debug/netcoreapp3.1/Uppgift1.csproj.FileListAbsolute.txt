@@ -1,0 +1,13 @@
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1.exe
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1.deps.json
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1.runtimeconfig.json
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1.runtimeconfig.dev.json
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1.dll
+C:\repos\C-Sharp\ConsoleApp1\bin\Debug\netcoreapp3.1\Uppgift1.pdb
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.csprojAssemblyReference.cache
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.AssemblyInfoInputs.cache
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.AssemblyInfo.cs
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.csproj.CoreCompileInputs.cache
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.dll
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.pdb
+C:\repos\C-Sharp\ConsoleApp1\obj\Debug\netcoreapp3.1\Uppgift1.genruntimeconfig.cache
