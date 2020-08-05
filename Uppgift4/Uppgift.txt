@@ -1,0 +1,7 @@
+Välkommen till en övning i arv och abstraktion!
+
+Idag ska vi försöka förstå varför man använder arv och interfaces!
+Dessutom ska vi titta närmare på åtkomstmodifierar och hur man
+använder dem på ett bra sätt!
+
+Bil-klassen som vi titta på för några övningar sedan
