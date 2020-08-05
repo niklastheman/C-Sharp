@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Villkor_och_loopar", "Villkor_och_loopar\Villkor_och_loopar.csproj", "{88961B49-9B34-4098-896C-A6B38869427B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88961B49-9B34-4098-896C-A6B38869427B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88961B49-9B34-4098-896C-A6B38869427B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88961B49-9B34-4098-896C-A6B38869427B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88961B49-9B34-4098-896C-A6B38869427B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39496D51-7889-4991-A112-8E5427718EF6}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,92 @@
+För att öva på loopar och villkor ska du skriva ett program som hanterar data 
+för ett maraton. De tävlande kan starta och gå i mål vid olika klockslag. 
+Den som har kortast tid mellan start och mål klockslagen vinner. Varje tävlande har även ett 
+startnummer.
+    
+    Din uppgift är att skriva ett program som:
+    
+    1. Läser in klockslag för start, klockslag för mål och startnummer. 
+       Startnummer för en tävlande ska vara ett tal som är större än 0. 
+    
+       Användaren ska få hjälp med vad de ska ange.
+    
+       Exempel på hur hjälptext och inmatning kan se ut:
+       
+       Ange startnummer: 11
+       Ange timme för start: 11 
+       Ange minut för start: 45 
+       Ange sekund för start: 10
+       Ange timme för mål: 13 
+       Ange minut för mål: 04 
+       Ange sekund för mål: 10 
+       
+       Denna inmatning ska pågå tills användaren anger ett tal som är mindre än 1.
+       
+       
+    
+    2. Efter inmatning av varje tävlande ska beräkning av den just nu bästa (lägsta) 
+       sluttid (det vill säga klockslag för mål minus klockslag för start) ske.
+       I exemplet ovan är sluttiden 1 tim, 19 min, 0 sek.   
+    
+       Om användaren anger ett startnummer som är lägre än 1 ska vinnarens 
+       startnummer och sluttid skrivas ut tillsammans med det totala antalet tävlande. 
+       Sedan ska programmet avslutas.
+       
+       Exempel på programkörning med flera tävlande:
+       
+       Ange startnummer: 23
+       Ange timme för start: 17 
+       Ange minut för start: 30 
+       Ange sekund för start: 15
+       Ange timme för mål: 18 
+       Ange minut för mål: 22 
+       Ange sekund för mål: 35
+       Ange startnummer: 36
+       Ange timme för start: 23 
+       Ange minut för start:35 
+       Ange sekund för start: 00
+       Ange timme för mål: 00 
+       Ange minut för mål: 12 
+       Ange sekund för mål: 24
+       Ange startnummer: -1
+       Vinnare är startnr: 36
+       Tim: 0 Min: 37 Sek: 24
+       Antal tävlande: 2
+       Programmet avslutas
+       
+       I samma mapp som denna fil finns en textfil med fler exempel på programkörningar (testdata.txt). 
+       Använd denna data för att säkerställa att ditt program fungerar som det ska.
+        
+    
+Krav som måste uppfyllas:
+	
+	* Programmet ska kunna på ett lämpligt sätt kunna hantera fall då midnatt passeras mellan klockslaget för start och mål.
+	
+	* De tävlande ska kunna matas in i vilken ordning som helst med samma resultat.
+	
+	* Det ska inte finnas någon begränsing på antalet tävlande, d.v.s. inmatning av tävlande ska kunna hålla 
+	  på i oändlighet tills det att vilkoret startnummer<=0 uppfylls.
+	
+Antaganden som du får göra (d.v.s. kontroller för detta behövs ej):
+	
+	* Samma startnummer matas inte in mer än en gång.
+	
+	* Korrekt imatning av timmar (00-23), minuter (00-59) och sekunder (00-59).
+	
+	* Det finns endast en vinnare.
+	
+	* Användaren matar in korrekt data.
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Tips
+
+	* För att räkna ut sluttiden räkna om klockslagen för start och mål till sekunder. Om klockslaget för start uttryckt i sekunder representeras av variabeln start och
+	  klockslaget för mål uttryckt i sekunder representeras av variabeln mal så är sluttid = mal - start. För att kontrollera om midnatt passeras mellan start och mål
+	  så kan villkoret start > mal användas.
+	  
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Extra uppgifter (frivilliga):
+
+	* Koda kontroller för korrekt inmatning av timmar (00-23), minuter (00-59) och sekunder (00-59). Om villkoren ej uppfylls ska ett felmeddelande visas och en ny inmatning måste göras.
+	* Beräkna och skriv ut även den näst bästa sluttiden.
