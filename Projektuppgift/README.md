@@ -30,5 +30,10 @@ Funktioner för bilmekaniker-användare:
 1. Man ska kunna hålla koll på ett lager bestående av olika typer av komponenter d.v.s. samma som de kompetenser finns. Varje komponent är kopplad till en typ av fordon. För varje komponent kopplat till en typ av fordon finns även ett antal som representerar hur många av en specifik typ komponent för en specifik typ av fordon det finns på lager.
 Exempelvis kan det finnas en komponent av typen "Däck" som är kopplade till fordonstypen "Bil" och som det finns 6 stycken av på lagret.
 
-2. För varje typ av ärende går det åt ett visst antal av en specifik komponent. För att det ska gå att lägga till ett nytt ärende måste det därför förutom att finnas en tillgänglig mekaniker (enligt de funktionella kraven ovan) även på lagret finnas minst det antal av den komponent som ärendet kräver. Om det krävda antalet komponenter finns på lager så måste antalet uppdateras efter det att ärendets skapats.
+2. För varje typ av ärende går det åt ett visst antal av en specifik komponent. För att det ska gå att lägga till ett nytt ärende måste det därför förutom att finnas en tillgänglig mekaniker (enligt de funktionella kraven ovan) även på lagret finnas minst det antal av den komponent som ärendet kräver. Om det krävda antalet komponenter finns på lager så måste antalet uppdateras efter det att ärendets skapats. Exempelvis om det finns 6 stycken bildäck på lager så ska det efter att ett ärende med problemet bildäck endast finnas två bildäck kvar på lager. Se nedan för hur mycket av en specifik komponent som går åt för en typ av fordon med ett visst problem.
+
+3. Om det inte finns tillräckligt av en komponent på lagret så måste man kunna köpa in mer av komponenten. När man köper in en komponent ska antalet av denna komponent adderas med det antal som man köpt in. När man köper in en komponent ska man välja typ av komponent (ex. "Däck"), typ av fordon som komponenten hör till (ex. "Bil") och antalet av komponenten man vill köpa in.
+
+
+#### Åtgång av material baserat på ärendets problem och fordonstyp
 
