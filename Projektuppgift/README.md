@@ -6,6 +6,44 @@ Bosses bilverkstad har tidigare arbetat manuellt med administrativa uppgifter. B
 ## Tekniska krav
 Systemet ska utvecklas i C# där WPF ska användas för det grafiska gränssnittet och JSON för att lagra data.
 
+1. Datalagring
+- Data skall lagras i json filer
+- Varje entitet skall lagras i en separat fil
+- Om fil saknas skall programmet skapa upp en ny utan att krascha
+2. Interface
+- Programmet skall använda sig av minst ett interface
+- Får inte användas till någon av entiteterna
+3. Abstrakt klass
+- Programmet skall använda sig av minst en abstrakt klass
+4. Arv
+- Programmet skall använda sig av arv
+5. Linq
+- Programmet skall använda sig av linq
+6. Lambda
+- Programmet skall använda sig av lambda
+7. Felhantering
+- Programmet skall använda sig av en try-catch
+- Programmet skall använda sig av ett egenskapat Exception
+8. Projektstruktur
+- Lösningen skall innehålla två projekt. Ett för gränssnitt och ett för logik (uppfylls av projekt-template)
+- Logik-projektet skall vara väl strukturerat i mappar (uppfylls av projekt-template)
+9. Validering
+- Programmet skall validera indata i enlighet med avsnittet “Data som lagras”. Det skall inte gå att lägga till objekt som saknar egenskaper som krävs
+- Inloggning
+    * Validering av e-postadress skall ske med hjälp av Regex
+    * För att en inloggning ska ske krävs att en användare med angivet användarnamn och lösenord finns lagrad
+    * Vid fel användarnamn och/eller lösenord skall personen som försöker logga in meddelas om detta
+
+### VG
+
+1. Asynkron programmering
+- Programmet skall använda sig av async/await på lämpligt vis
+2. Generisk programmering
+- Programmet skall använda sig av generisk-programmering i datalagret
+3. Extension-metoder
+- Programmet skall använda sig av en extension-metod på lämpligt vis. Exempelvis genom att bygga en funktion som kan användas på en sträng-variabel
+
+
 ## Funktionella krav
 Systemet ska kunna hantera två olika typer av användare. De två typer av användare som ska stödjas är admin och bilmekaniker. Det ska endast finnas en admin-användare. Denna användare finns redan i filen User.json. Beroende på vilken typ av användare man är inloggad som ska man ha tillgång till olika funktionalitet.
 
@@ -37,4 +75,57 @@ Exempelvis kan det finnas en komponent av typen "Däck" som är kopplade till fo
 
 
 #### Åtgång av material baserat på ärendets problem och fordonstyp
+
+## Data som ska lagras
+
+Sakerna (läs entiteterna) som Bosse vill ha information om och deras egenskaper listas nedan. De egenskaper som följs av en asterix (*) är obligatoriska, dvs de måste fyllas i när ett objekt av typen skapas. Vissa entiteter kan komma att behöva id:n. Det har medvetet utelämnats från listan nedan och är upp till er hur ni vill lösa. Samtliga entiteter skall (se tekniska krav) lagras i egna filer.
+
+### Användare:
+
+Det finns två typer av användare. Bosse och alla andra. Bosse kan lägga till och ta bort användare. Det kan ingen annan. Skillnaden mellan Bosse och övriga användare kan lösas med arv men måste inte göra det.
+
+En användare består av ett användarnamn *, lösenord *,  någonting som identifierar vilken mekaniker som användare tillhör (gäller inte Bosse).
+
+### Fordon:
+
+Fordon har ett modellnamn *, ett registreringsnummer *, mätare * (hur långt bilen gått), registreringsdatum *, drivmedel *(se typer)
+
+Bilar
+Typ av bil (se typer) *
+Huruvida bilen har dragkrok eller inte *
+Motorcyklar
+Lastbilar
+Maxvikt last *
+Bussar
+Max antal passagerare *
+
+### Mekaniker
+
+Namn på den anställde *, födelsedatum *(för att inte missa att fira födelsedagar), anställningsdatum *, slutdatum samt en uppsättning kompetenser (läs komponent se typer).
+
+### Ärenden:
+
+Ett ärende består av en beskrivning, ett fordon, ett problem (läs komponent se typer), en mekaniker och en status som säger huruvida ärendet är avklarat eller inte.
+
+## Typer
+
+Typer behöver inte nödvändigtvis lagras. Men system måste kunna behandla dem. Det är frivilligt vilken datatyp ni väljer använda och olika typer kan ha olika datatyper.
+
+1. Drivmedel
+    * El
+    * Bensin
+    * Diesel
+    * Etanol
+2. Komponent
+    * Bromsar
+    * Motor
+    * Kaross
+    * Vindrutor
+    * Däck
+3. Typ av bil
+    * Sedan
+    * Herrgårdsvagn
+    * Cabriolet
+    * Halvkombi
+
 
