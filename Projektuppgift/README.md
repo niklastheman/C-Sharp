@@ -7,41 +7,41 @@ Bosses bilverkstad har tidigare arbetat manuellt med administrativa uppgifter. B
 Systemet ska utvecklas i C# där WPF ska användas för det grafiska gränssnittet och JSON för att lagra data.
 
 1. Datalagring
-- Data skall lagras i json filer
-- Varje entitet skall lagras i en separat fil
-- Om fil saknas skall programmet skapa upp en ny utan att krascha
+      - Data skall lagras i json filer
+      - Varje entitet skall lagras i en separat fil
+      - Om fil saknas skall programmet skapa upp en ny utan att krascha
 2. Interface
-- Programmet skall använda sig av minst ett interface
-- Får inte användas till någon av entiteterna
+      - Programmet skall använda sig av minst ett interface
+      - Får inte användas till någon av entiteterna
 3. Abstrakt klass
-- Programmet skall använda sig av minst en abstrakt klass
+      - Programmet skall använda sig av minst en abstrakt klass
 4. Arv
-- Programmet skall använda sig av arv
+      - Programmet skall använda sig av arv
 5. Linq
-- Programmet skall använda sig av linq
+      - Programmet skall använda sig av linq
 6. Lambda
-- Programmet skall använda sig av lambda
+      - Programmet skall använda sig av lambda
 7. Felhantering
-- Programmet skall använda sig av en try-catch
-- Programmet skall använda sig av ett egenskapat Exception
+      - Programmet skall använda sig av en try-catch
+      - Programmet skall använda sig av ett egenskapat Exception
 8. Projektstruktur
-- Lösningen skall innehålla två projekt. Ett för gränssnitt och ett för logik (uppfylls av projekt-template)
-- Logik-projektet skall vara väl strukturerat i mappar (uppfylls av projekt-template)
+      - Lösningen skall innehålla två projekt. Ett för gränssnitt och ett för logik (uppfylls av projekt-template)
+      - Logik-projektet skall vara väl strukturerat i mappar (uppfylls av projekt-template)
 9. Validering
-- Programmet skall validera indata i enlighet med avsnittet “Data som lagras”. Det skall inte gå att lägga till objekt som saknar egenskaper som krävs
-- Inloggning
-    * Validering av e-postadress skall ske med hjälp av Regex
-    * För att en inloggning ska ske krävs att en användare med angivet användarnamn och lösenord finns lagrad
-    * Vid fel användarnamn och/eller lösenord skall personen som försöker logga in meddelas om detta
+      - Programmet skall validera indata i enlighet med avsnittet “Data som lagras”. Det skall inte gå att lägga till objekt som saknar egenskaper som krävs
+      - Inloggning
+    1. Validering av e-postadress skall ske med hjälp av Regex
+    2. För att en inloggning ska ske krävs att en användare med angivet användarnamn och lösenord finns lagrad
+    3. Vid fel användarnamn och/eller lösenord skall personen som försöker logga in meddelas om detta
 
 ### VG
 
 1. Asynkron programmering
-- Programmet skall använda sig av async/await på lämpligt vis
+      - Programmet skall använda sig av async/await på lämpligt vis
 2. Generisk programmering
-- Programmet skall använda sig av generisk-programmering i datalagret
+      - Programmet skall använda sig av generisk-programmering i datalagret
 3. Extension-metoder
-- Programmet skall använda sig av en extension-metod på lämpligt vis. Exempelvis genom att bygga en funktion som kan användas på en sträng-variabel
+      - Programmet skall använda sig av en extension-metod på lämpligt vis. Exempelvis genom att bygga en funktion som kan användas på en sträng-variabel
 
 
 ## Funktionella krav
@@ -100,14 +100,14 @@ En användare består av ett användarnamn *, lösenord *,  någonting som ident
 
 Fordon har ett modellnamn *, ett registreringsnummer *, mätare * (hur långt bilen gått), registreringsdatum *, drivmedel *(se typer)
 
-Bilar
-Typ av bil (se typer) *
-Huruvida bilen har dragkrok eller inte *
-Motorcyklar
-Lastbilar
-Maxvikt last *
-Bussar
-Max antal passagerare *
+1. Bilar
+      * Typ av bil (se typer) *
+      * Huruvida bilen har dragkrok eller inte *
+2. Motorcyklar
+3. Lastbilar
+      * Maxvikt last *
+4. Bussar
+      * Max antal passagerare *
 
 ### Mekaniker
 
