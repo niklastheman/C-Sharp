@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,30 @@ namespace GUI.Login
     /// </summary>
     public partial class LoginPage : Page
     {
+        private LoginService _loginService;
         public LoginPage()
         {
             InitializeComponent();
+
+            _loginService = new LoginService();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string username = this.tbUsernam.Text;
+            string password = this.pbPassword.Password;
+
+            bool successful = _loginService.Login(username, password);
+
+            if (successful)
+            {
+
+
+            }
+            else
+            {
+
+            }
         }
     }
 }
