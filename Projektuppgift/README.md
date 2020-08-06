@@ -1,4 +1,5 @@
 # C# projektuppgift
+För att uppnå godkänt betyg på denna uppgift behöver alla tekniska samt funktionella krav som inte ingår i betyget VG vara uppfyllda. För betyget VG krävs dessutom att alla tekniska och funktionella krav som specificerats under VG ocskå vara uppfyllda,
 
 ## Bosses Bilverkstad - Bakgrund
 Bosses bilverkstad har tidigare arbetat manuellt med administrativa uppgifter. Bosse har nu bestämt att ett system ska köpas in för att hjälpa till att effektivisera verksamheten. Exempel på uppgifter som Bosse vill kunna utföra i det nya systemet är att kunna lägga in nya ärenden, se vilka av hans bilmekaniker som är tillgängliga för ett ärende och kunna tilldela en bilmekaniker ett ärende baserat på dennes specialkompentenser. Er uppgift är nu att utveckla detta system till Bosse.
@@ -17,17 +18,15 @@ Systemet ska utvecklas i C# där WPF ska användas för det grafiska gränssnitt
       - Programmet skall använda sig av minst en abstrakt klass
 4. Arv
       - Programmet skall använda sig av arv
-5. Linq
-      - Programmet skall använda sig av linq
-6. Lambda
-      - Programmet skall använda sig av lambda
-7. Felhantering
+5. Linq & Lambda
+      - Programmet skall använda sig av linq & lambda
+6. Felhantering
       - Programmet skall använda sig av en try-catch
       - Programmet skall använda sig av ett egenskapat Exception
-8. Projektstruktur
+7. Projektstruktur
       - Lösningen skall innehålla två projekt. Ett för gränssnitt och ett för logik (uppfylls av projekt-template)
       - Logik-projektet skall vara väl strukturerat i mappar (uppfylls av projekt-template)
-9. Validering
+8. Validering
       - Programmet skall validera indata i enlighet med avsnittet “Data som lagras”. Det skall inte gå att lägga till objekt som saknar egenskaper som krävs
       - Inloggning
     1. Validering av e-postadress skall ske med hjälp av Regex
