@@ -27,6 +27,7 @@ Funktioner för bilmekaniker-användare:
 3. Man ska kunna lista pågående och avslutade ärenden för den inloggade användaren. Väljer man ett ärende ska man få fram all information om det.
 
 ### Funktionella krav för VG
+
 1. Man ska kunna hålla koll på ett lager bestående av olika typer av komponenter d.v.s. samma som de kompetenser finns. Varje komponent är kopplad till en typ av fordon. För varje komponent kopplat till en typ av fordon finns även ett antal som representerar hur många av en specifik typ komponent för en specifik typ av fordon det finns på lager.
 Exempelvis kan det finnas en komponent av typen "Däck" som är kopplade till fordonstypen "Bil" och som det finns 6 stycken av på lagret.
 
