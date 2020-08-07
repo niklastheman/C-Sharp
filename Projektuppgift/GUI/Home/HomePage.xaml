@@ -8,7 +8,15 @@
       d:DesignHeight="350" d:DesignWidth="500"
       Title="Bosses bilverkstad - Hem">
 
-    <Grid>
-        
+    <Grid Margin="10,0,10,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <Label Grid.Row="0" Grid.Column="0">Hem</Label>
     </Grid>
 </Page>

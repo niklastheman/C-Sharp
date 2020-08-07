@@ -11,19 +11,19 @@ namespace Logic.DAL
 {
     public class UserDataAccess
     {
-        private const string path = @"\User.json";
+        private const string path = @"DAL\User.json";
 
-        public async Task<List<User>> GetUsers()
+        /// <summary>
+        /// https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-how-to
+        /// </summary>
+        /// <returns></returns>
+        public List<User> GetUsers()
         {
 
-            var a = System.AppDomain.CurrentDomain.BaseDirectory;
+            string jsonString = File.ReadAllText(path);
+            List<User> users = JsonSerializer.Deserialize<List<User>>(jsonString);
 
-            using (FileStream fs = File.OpenRead(path))
-            {
-                List<User> users = await JsonSerializer.DeserializeAsync<List<User>>(fs);
-
-                return users;
-            }
+            return users;
         }
     }
 }
