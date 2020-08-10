@@ -1,7 +1,55 @@
-Välkommen till en övning i arv och abstraktion!
+Välkommen till en övning i arv, abstraktion och inkapsling!
 
 Idag ska vi försöka förstå varför man använder arv och interfaces!
 Dessutom ska vi titta närmare på åtkomstmodifierar och hur man
 använder dem på ett bra sätt!
 
-Bil-klassen som vi titta på för några övningar sedan
+I en tidigare uppgift har vi definierat klassen Bil. Idag ska vi se om vi kan göra något liknande med motorcykel, buss och lastbil också.
+Vi ska även fundera över hur vi kan utnyttja de likheter som finns mellan dessa entiteter.
+
+Vidare ska vi undersöka något som i C# kallas interface. Interface är bra för abstraktion då de separera användandet och implementeringen av kod.
+Det kan vara svårt att förstå nyttan av interface i början. Det interface bidrar med är att säkerställa att klasser hålls separerade på ett tydligt sätt.
+
+Uppgift 1:
+
+Vi ska skapa fyra klasser i projektet "Klasser":
+
+Bil, motorcykel, buss samt lastbil.
+Alla dess klasser skall implementera ett modellnamn, ett registreringsnummer, mätare (hur långt bilen gått), registreringsdatum
+
+Utöver dessa egenskaper (properties) gäller följande för de enskillda klasserna:
+
+Bil
+En egenskap som säger huruvida bilen har dragkrok eller ej
+
+Motorcykel
+Maxfart
+
+Lastbil
+Maxlast i kg
+
+Buss
+Maxantal passagerare
+
+Definiera dessa fyra klasser. Fundera över hur du kan hålla nere mängden kod (hint Arv!).
+
+Uppgift 2
+
+I lösningen (solution) ser du två projekt. I projektet ArvOchAbstraktion; kan du använda dina nyligen skapade klasser?
+Om inte, vad behöver du göra? (hint reference)
+
+Uppgift 3
+
+I projektet ArvOchAbstraktion vill vi skapa en "Verkstad" - klass. Men innan du skapar den klassen skall du skapa ett interface: IVerkstad. IVerkstad skall definera en metod
+för att kunna lägga till ett fordon till verkstaden, och ett för att ta bort ett fordon. Detta skall alltså fungera för alla typer av fordon.
+
+Skapa sedan klassen Verkstad, ärv från IVerkstad och skriv lämplig kod. Kör IVerkstad från Main.
+
+När du fått det att fungera kan du prova att skapa en ny klass, VerkstadV2, ärva av IVerkstad men skriva annan funktionalitet. Se att användning av IVerkstad i Main inte
+påverkas. (Styrkan med ett interface).
+
+
+
+
+
+ 
