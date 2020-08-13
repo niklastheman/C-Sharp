@@ -43,12 +43,12 @@ Användaren svara på en fråga i taget. Användaren skriver "y" för ja och "n"
 
 4. Använd följande kod men få den att sluta när x är hundra eller mer
 
-int x = 0;
+		int x = 0;
 
-while(true){
+		while(true){
 
-Console.WriteLine(x.ToString());
+		Console.WriteLine(x.ToString());
 
-x++;
-}
+		x++;
+		}
 
