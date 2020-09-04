@@ -26,12 +26,14 @@ namespace Felande
                 Console.WriteLine("Tryck på en knapp för att fortsätta...");
                 Console.ReadKey();
 
+            bool sant = false;
+
                 Console.WriteLine();
-                Console.WriteLine($"Boolean eller bool är en användbar datatyp när man vill avgör om något är sant eller falskt. Här ser vi variablen sants värde: {sant}");
+            Console.WriteLine($"Boolean eller bool är en användbar datatyp när man vill avgör om något är sant eller falskt. Här ser vi variablen sants värde: {sant}");
                 Console.WriteLine("Tryck på en knapp för att fortsätta...");
                 Console.ReadKey();
 
-                bool sant = false;
+                
 
                 DateTime datum = DateTime.Now;
 
