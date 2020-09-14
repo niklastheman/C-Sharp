@@ -37,5 +37,24 @@ Se om du kan översätta funktionaliteten från while till en for-loop
 
 ### do-while
 
-Om klar övningar ovan, prova även med en do-while-loop
+9. Skapa ett program där användaren skall mata in kontaktuppgifter. Ta emot alla värden i
+variabler
+a. Be användaren mata in sitt namn, gatuadress, postnummer och postort.
+b. Kontrollera att alla uppgifter är ifyllda. Är dom det skall ett meddelande visas för
+användaren som säger- Alla uppgifter ifyllda. Programmet avslutas sedan.
+c. Om inte alla uppgifter är ifyllda skall man börja om med steg a-d. Kontrollera för
+varje värde om just det värdet är ifyllt. Programmet skall inte be användaren mata in
+ett värde som redan är inmatat.
 
+
+
+10. Skapa ett program där användaren skall logga in . Ta emot inmatade värden i variabler.
+a. Skapa en konstant som innehåller användarnamn. Sätt värdet på den till abc123 
+b. Skapa en konstant som innehåller lösenord. Sätt värdet på den till password
+c. Skriv ett meddelande till användaren och be denne att ange användarnamn
+d. Skriv ett meddelande till användaren och be denne att ange lösenord
+e. Om användaren anger ett riktigt användarnamn och lösenord, visa ett meddelande
+som säger- Du är inloggad. Avsluta programmet.
+f. Om användaren anger felaktiga uppgifter , skriv ett meddelande på skärmen och
+tala om vad som var felaktigt. Fråga om användaren vill försöka igen(J/N). Om svaret
+är J skall inloggningen återupprepas
