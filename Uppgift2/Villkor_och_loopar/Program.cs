@@ -6,12 +6,6 @@ using System.Threading;
 
 namespace Villkor_och_loopar
 {
-
-    /// <summary>
-
-
-    /// 
-    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -39,13 +33,15 @@ namespace Villkor_och_loopar
             int contestants = 0;
 
             // bool-värden för att huvudloop ska köras och bool-värde för inmatningsloopar   
-            bool isRacing = true, isInputting;
+            bool isRacing = true, 
+                isInputting;
+
 
             while (isRacing)
             {   
                 Console.WriteLine("\t---------------"); // För att få en renare utskrift
                 isInputting = true;
-                while (isInputting)
+                do
                 {
                     Console.Write("Ange startnummer: ");
                     if (!int.TryParse(Console.ReadLine(), out startNumber))
@@ -61,6 +57,8 @@ namespace Villkor_och_loopar
                     else
                         isInputting = false;
                 }
+                while (isInputting);
+               
                 // Kollar om loppet fortfarande körs. Om inte (dvs om startNumber < 1) så bryts loopen
                 if (!isRacing)
                     break;
@@ -117,6 +115,7 @@ namespace Villkor_och_loopar
                         isInputting = false;
                 }
                 while (isInputting);
+                
                 // Här tar vi emot minut för mål
                 isInputting = true;
                 do
@@ -147,7 +146,7 @@ namespace Villkor_och_loopar
                 int contestantHours = finishHours - startHours;
                 int contestantMin = finishMin - startMin;
                 int contestantSec = finishSec - startSec;
-
+                
                 // Uträkningar för att fånga upp lopp som passerar midnatt
                 if (contestantHours < 0)
                 {
@@ -165,8 +164,8 @@ namespace Villkor_och_loopar
                     contestantSec += 60;
                     contestantMin--;
                 }
-
-                // Omvandlar den tävlandes tid till sekunder för jämförelse av ledaren
+                
+                // Omvandlar den tävlandes tid till sekunder för jämförelser
                 int contestantSumInSeconds = contestantSec + (contestantHours * 3600) + (contestantMin * 60);
 
                 // Jämför nuvarande tävlande mot ledaren i sekunder. 
@@ -174,7 +173,8 @@ namespace Villkor_och_loopar
                 // Condition 2 för att fånga upp första loop (eftersom att ledareSluttidSekunder är instansierat till 0 utanför detta kodblock.
                 if (contestantSumInSeconds < leaderSumInSeconds || leaderSumInSeconds <= 0)
                 {
-                    // Andraplats tilldelas förra ledaren, men inte under första iterering
+                    
+                    // Andraplats tilldelas förra ledaren, men inte under första loppet
                     if (leaderSumInSeconds > 0)
                     {
                         secondPlaceSumInSeconds = leaderSumInSeconds;
@@ -183,6 +183,7 @@ namespace Villkor_och_loopar
                         secondPlaceMin = leaderMin;
                         secondPlaceSec = leaderSec;
                     }
+                    
                     // Ersätter ledaren mot den tävlande
                     leaderSumInSeconds = contestantSumInSeconds;
                     leaderStartNr = startNumber;
@@ -198,6 +199,7 @@ namespace Villkor_och_loopar
                     contestantSumInSeconds < secondPlaceSumInSeconds) ||
                     secondPlaceSumInSeconds <= 0)
                 {
+                    secondPlaceSumInSeconds = contestantSumInSeconds;
                     secondPlaceStartNr = startNumber;
                     secondPlaceHours = contestantHours;
                     secondPlaceMin = contestantMin;
@@ -231,13 +233,13 @@ namespace Villkor_och_loopar
                 $"\nAntal tävlande: {contestants}" +
                 $"\nProgrammet avslutas..." +
                 $"\n\t---------------");
-                Thread.Sleep(1000);
+                Thread.Sleep(1000); // ;)
             }
 
             else if (contestants < 1)
             {
                 Console.WriteLine($"\t---------------" +
-                    "Loppet hade inga deltagare! " +
+                    "\nLoppet hade inga deltagare! " +
                     "\nProgrammet avslutas..." +
                     "\n\t----------------");
                 Thread.Sleep(1000);
@@ -246,7 +248,6 @@ namespace Villkor_och_loopar
             // Skrivs ut om det bara är 1 tävlande.
             else
             {
-                // Skriver ut vinnarens startnummer och resultat
                 Console.WriteLine($"\t---------------" +
                     $"\nVinnarens startnummer är: {leaderStartNr}" +
                     $"\nSluttid: " +
