@@ -12,7 +12,7 @@ namespace Villkor_och_loopar
         {
 
             // Deklaration av variablar. Jag valde att sätta int bredvid för att tydligt se skillnaden på start/finish, leader och secondPlace
-            int startNumber = 0,
+            int startNumber = 0, 
                 startHours = 0,
                 startMin = 0,
                 startSec = 0,
@@ -147,10 +147,11 @@ namespace Villkor_och_loopar
                 int contestantMin = finishMin - startMin;
                 int contestantSec = finishSec - startSec;
                 
-                // Uträkningar för att fånga upp lopp som passerar midnatt
-                if (contestantHours < 0)
+                // Uträkningar för att fånga upp lopp som passerar 
+                if (contestantSec < 0)
                 {
-                    contestantHours += 24;
+                    contestantSec += 60;
+                    contestantMin--;
                 }
 
                 if (contestantMin < 0)
@@ -159,12 +160,11 @@ namespace Villkor_och_loopar
                     contestantHours--;
                 }
 
-                if (contestantSec < 0)
+                if (contestantHours < 0)
                 {
-                    contestantSec += 60;
-                    contestantMin--;
+                    contestantHours += 24;
                 }
-                
+
                 // Omvandlar den tävlandes tid till sekunder för jämförelser
                 int contestantSumInSeconds = contestantSec + (contestantHours * 3600) + (contestantMin * 60);
 
