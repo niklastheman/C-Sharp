@@ -147,7 +147,7 @@ namespace Villkor_och_loopar
                 int contestantMin = finishMin - startMin;
                 int contestantSec = finishSec - startSec;
                 
-                // Uträkningar för att fånga upp lopp som passerar 
+                // Uträkningar för att fånga upp lopp som passerar midnatt
                 if (contestantSec < 0)
                 {
                     contestantSec += 60;
