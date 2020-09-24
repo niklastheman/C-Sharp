@@ -9,51 +9,37 @@ namespace Klasser
 
         static void Main(string[] args)
         {
-            // Variabler för användare
-            string userName;
-            int userAge;
-
-            // Variabler för bil
-            string modelName, licensePlate;
-            int weight;
-            bool electric = false,
-                isAddingPersons = true,
-                isAddingCars;
-            string registered;
-
-            string answer;
-
             // Skapar fyra objekt av klassen Bil
             Car BMW = new Car("BMW Z3")
             {
-                Weight = 100,
+                WeightInKG = 1000,
                 Registered = DateTime.Now.ToString("yyyy/MM/dd"),
                 Electric = false,
                 LicensePlate = "ABC123"
             };
             Car Tesla = new Car("Tesla s-series")
             {
-                Weight = 92,
-                Registered = DateTime.Now.ToShortDateString(),
+                WeightInKG = 920,
+                Registered = DateTime.Now.ToString("yyyy/MM/dd"),
                 Electric = true,
                 LicensePlate = "DEF456"
             };
             Car Volkswagen = new Car("Volskwagen Passat")
             {
-                Weight = 110,
-                Registered = DateTime.Now.ToShortDateString(),
+                WeightInKG = 1100,
+                Registered = DateTime.Now.ToString("yyyy/MM/dd"),
                 Electric = false,
                 LicensePlate = "GHI789"
             };
-            Car Chevrolet = new Car("Chevrolet")
+            Car Chevrolet = new Car("Chevrolet Volt")
             {
-                Weight = 115,
-                Registered = DateTime.Now.ToShortDateString(),
+                WeightInKG = 1150,
+                Registered = DateTime.Now.ToString("yyyy/MM/dd"),
                 Electric = true,
                 LicensePlate = "JKL101"
             };
 
-            // Lista för de skapade objekten ovanför
+            // Lista för de skapade objekten
             List<Car> listOfCars = new List<Car>();
             // Lägger till de skapade objekten i listan
             listOfCars.Add(BMW);
@@ -65,57 +51,47 @@ namespace Klasser
             Console.WriteLine("Skapade objekt innan programmet körs: ");
             PrintCars(listOfCars);
 
+            Console.WriteLine("\n\tTryck på en knapp för att fortsätta...");
+            Console.ReadKey();
+            Console.Clear();
+
             // Tar bort alla element i listan
             listOfCars.Clear();
 
-            // Lista som tar emot klassen Person
+            // Lista som tar emot objekt av klassen Person
             List<Person> listOfUsers = new List<Person>();
-
+            
+            // Start av huvudprogram (skapa obegränsat antal personer och tilldela bilar till dem)
+            var isAddingPersons = true;
             do
             {
                 Console.WriteLine("\n\t----- LÄGG TILL PERSON -----");
+                var userName = SetName("Mata in namn: ");
+                var userAge = SetAgeOrWeight("Mata in ålder: ");
 
-                Console.Write("Mata in användarnamn: ");
-                userName = Console.ReadLine();
-                Console.Write("Mata in ålder: ");
-                int.TryParse(Console.ReadLine(), out userAge);
-
-                // Skapar objekt av person-klassen
+                // Skapar objekt av klassen Person
                 Person user = new Person(userName, userAge);
                 // Lägger till user i lista med användare.
                 listOfUsers.Add(user);
 
-                isAddingCars = true;
+                var isAddingCars = true;
                 do
                 {
-                    Console.WriteLine($"\n\t----- REGISTRERA BIL TILL ANVÄNDARE {user.GetName().ToUpper()} -----");
-
-                    Console.Write("Mata in modell: ");
-                    modelName = Console.ReadLine();
-
-                    Console.Write("Mata in vikt: ");
-                    weight = int.Parse(Console.ReadLine());
-
-                    // Registrering av fordon sker när applikationen körs
-                    registered = DateTime.Now.ToShortDateString();
-
-                    Console.Write("Mata in registreringsnummer: ");
-                    licensePlate = Console.ReadLine().ToUpper();
-
-                    Console.Write("Är det en elbil? j/n: ");
-                    answer = Console.ReadLine().ToLower();
-                    // Om svar är j/J så sätts electric till true.
-                    electric = answer == "j";
+                    Console.WriteLine($"\n\t----- REGISTRERA BIL TILL ANVÄNDARE \"{user.GetName().ToUpper()}\" -----");
+                    var modelName = SetName("Mata in modell: ");
+                    var weight = SetAgeOrWeight("Mata in vikt: ");
+                    var licensePlate = SetLicensePlate("Mata in registreringsnummer: ");
+                    var isElectric = SetBool("Är det en elbil? j/n: ");
+                    var registered = DateTime.Now.ToString("yyyy/MM/dd"); // Registrering av fordon sker när applikationen körs
 
                     // Skapar nytt objekt av klassen car.
-                    Car car = new Car(modelName, weight, registered, licensePlate, electric);
+                    Car car = new Car(modelName, weight, registered, licensePlate, isElectric);
 
-
-                    // Lägger in car i listan Cars
+                    // Lägger in car i användarlistan Cars
                     user.Cars.Add(car);
 
                     Console.Write($"Vill du registrera fler bilar till {user.GetName()}? j/n: ");
-                    answer = Console.ReadLine().ToLower();
+                    var answer = Console.ReadLine().ToLower();
                     if (answer != "j")
                     {
                         isAddingCars = false;
@@ -133,27 +109,28 @@ namespace Klasser
             } while (isAddingPersons);
             
             PrintUsersAndCars(listOfUsers);
-            Console.ReadKey();
+            Console.ReadKey(); // Avslutar program
         }
 
+        
 
 
-
+        // Metoder
         /// <summary>
         /// Skriver ut alla bilar som finns i en lista.
         /// </summary>
         /// <param name="listOfCars">Lista med bilar som ska skrivas ut.</param>
-        static void PrintCars(List<Car> listOfCars)
+        public static void PrintCars(List<Car> listOfCars)
         {
-            foreach (var cars in listOfCars)
-                cars.GetInfo();
+            foreach (var car in listOfCars)
+                car.GetInfo();
         }
 
         /// <summary>
         /// Skriver ut alla personer och bilarna de äger.
         /// </summary>
-        /// <param name="listOfUsers">Lista med användare</param>
-        static void PrintUsersAndCars(List<Person> listOfUsers)
+        /// <param name="listOfUsers">Lista med användare.</param>
+        public static void PrintUsersAndCars(List<Person> listOfUsers)
         {
             foreach (var user in listOfUsers)
             {
@@ -165,18 +142,103 @@ namespace Klasser
                 }
             }
         }
+        /// <summary>
+        /// Frågar användaren om vad som ska matas in och sätter ett <b>strängvärde</b>, och tvingar bokstäverna till <b>upper-case</b>.
+        /// </summary>
+        /// <param name="question">Frågan som ska ställas till användaren.</param>
+        /// <returns>String</returns>
+        public static string SetLicensePlate(string question)
+        {
+            var isInputting = true;
+            string licensePlate;
+            do
+            {
+                Console.Write(question);
+                licensePlate = Console.ReadLine().ToUpper();
+                if (String.IsNullOrEmpty(licensePlate))
+                    Console.WriteLine("Du måste mata in något!");
 
+                else
+                    isInputting = false;
+
+            } while (isInputting);
+
+            return licensePlate;
+        }
+
+        /// <summary>
+        /// Frågar användaren om vad som ska matas in och sätter ett <b>heltal</b>.
+        /// </summary>
+        /// <param name="question">Frågan som ska ställas till användaren</param>
+        /// <returns>Integer</returns>
+        public static int SetAgeOrWeight(string question)
+        {
+            var isInputting = true;
+            int ageOrWeight;
+            do
+            {
+                Console.Write(question);
+                if (!int.TryParse(Console.ReadLine(), out ageOrWeight))
+                    Console.WriteLine("Du måste mata in ett heltal!");
+                
+                else
+                    isInputting = false;
+                
+
+            } while (isInputting);
+
+            return ageOrWeight;
+        }
+
+        /// <summary>
+        /// Frågar användaren om vad som ska matas in och sätter ett <b>strängvärde</b>
+        /// </summary>
+        /// <param name="question">Frågan som ska ställas till användaren</param>
+        /// <returns>String</returns>
+        public static string SetName(string question)
+        {
+            var isInputting = true;
+            string name;
+            do
+            {
+                Console.Write(question);
+                name = Console.ReadLine();
+                if (String.IsNullOrEmpty(name))
+                    Console.WriteLine("Du matade inte in något!");
+
+                else
+                    isInputting = false;
+
+            } while (isInputting);
+
+            return name;
+        }
+        /// <summary>
+        /// Frågar användaren och returnerar ett <b>bool-värde</b>.
+        /// </summary>
+        /// <param name="questionJorN">Frågan som ska ställas. <b>Frågan måste innehålla j/n</b> </param>
+        /// <returns>Boolean</returns>
+        public static bool SetBool(string questionJorN)
+        {
+            
+            Console.Write(questionJorN);
+            var answer = Console.ReadLine().ToLower();
+            
+            // Om svar är j/J så sätts electric till true.
+            var electric = (answer == "j");
+            return electric;
+        }
 
     }
 
-    public class Car    
+    public class Car
     {
         // Fields
-        private string model;
-        private double odometer;
+        public string _model;
+        private decimal _odometer;
 
         // Properties
-        public int Weight { get; set; }
+        public int WeightInKG { get; set; }
         public string Registered { get; set; }
         public bool Electric { get; set; }
         public string LicensePlate { get; set; }
@@ -185,22 +247,22 @@ namespace Klasser
         /// Adderar hur långt ett fordon har kört till milmätaren.
         /// </summary>
         /// <param name="lengthDriven">Hur långt fordonet har kört</param>
-        public void SetOdometer(double lengthDriven)
+        public void SetOdometer(decimal lengthDriven)
         {
             if (lengthDriven > 0)
             {
-                odometer += lengthDriven;
+                _odometer += lengthDriven;
             }
             
         }
 
         /// <summary>
-        /// Hämtar milmätare.
+        /// Hämtar milmätaren och omvandlar till <b>string</b>.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String</returns>
         public string GetOdometer()
         {
-            return odometer.ToString();
+            return _odometer.ToString();
         }
 
         /// <summary>
@@ -209,8 +271,8 @@ namespace Klasser
         public void GetInfo()
         {
             Console.WriteLine();
-            Console.WriteLine($"Modell: {model}");
-            Console.WriteLine($"Vikt: {Weight}");
+            Console.WriteLine($"Modell: {_model}");
+            Console.WriteLine($"Vikt: {WeightInKG}kg");
             Console.WriteLine($"Registrerades: {Registered}");
             Console.WriteLine($"Registreringsnummer: {LicensePlate}");
             if (Electric)
@@ -223,7 +285,7 @@ namespace Klasser
         /// <param name="modelname">Modellnamn.</param>
         public Car(string modelname)
         {
-            this.model = modelname;
+            _model = modelname;
         }
 
         /// <summary>
@@ -239,8 +301,8 @@ namespace Klasser
             string licenseplate,
             bool electric)
         {
-            this.model = model;
-            this.Weight = weight;
+            this._model = model;
+            this.WeightInKG = weight;
             this.Registered = registered;
             this.LicensePlate = licenseplate;
             this.Electric = electric;
@@ -257,7 +319,7 @@ namespace Klasser
         /// <summary>
         /// Hämtar en persons namn
         /// </summary>
-        /// <returns></returns>
+        /// <returns>String</returns>
         public string GetName()
         {
             return name;
@@ -265,12 +327,13 @@ namespace Klasser
         /// <summary>
         /// Hämtar en persons ålder
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Integer</returns>
         public int GetAge()
         {
             return age;
         }
 
+        
         public Person(string name, int age)
         {
             this.name = name;
