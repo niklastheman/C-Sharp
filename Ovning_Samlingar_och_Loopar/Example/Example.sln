@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ovning_6", "Ovning_6\Ovning_6.csproj", "{4DE62684-E71E-4440-B850-A2BD498D4C41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Debug|x64.Build.0 = Debug|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Debug|x86.Build.0 = Debug|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Release|x64.ActiveCfg = Release|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Release|x64.Build.0 = Release|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Release|x86.ActiveCfg = Release|Any CPU
+		{4DE62684-E71E-4440-B850-A2BD498D4C41}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25D5C25D-805A-49C5-B848-C891649E31A7}
+	EndGlobalSection
+EndGlobal
