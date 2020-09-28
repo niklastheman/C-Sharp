@@ -21,6 +21,7 @@ Sedan itererar (loopar) du igenom listan av bilar och skriver ut informationen o
 Om en bil är miljövänlig (dvs är en elbil) skriver du ut ett extra meddelande på skärmen (i stil med "Detta är en elbil!")
 Om klar se extra uppfigter nedan!
 
+
 Nedan ser du klassen Bil. Det är en bra start, men den är inte komplett! 
     Bilar klassen saknar följande uppgifter:
 Properties:
