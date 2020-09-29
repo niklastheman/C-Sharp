@@ -60,7 +60,7 @@ namespace ArvOchAbstraktion
 
                 Console.WriteLine("\nSkriv in registreringsnummer på det fordon du vill ta bort: ");
                 string licensePlateToMatch = Console.ReadLine().ToUpper();
-                licensePlateToMatch = licensePlateToMatch.Replace(" ", "");
+                licensePlateToMatch = licensePlateToMatch.Replace(" ", ""); // Tar bort whitespace i inmatningen.
 
                 Vehicle vehicleToRemove = null;
 
@@ -78,7 +78,7 @@ namespace ArvOchAbstraktion
                     ListOfVehicles.Remove(vehicleToRemove);
                     Console.WriteLine($"Fordon: {vehicleToRemove.GetVehicleType()} " +
                         $"med registreringsnummer: {vehicleToRemove.LicensePlate}" +
-                        $"\ntogs bort från verkstaden.");
+                        $"\nTogs bort från verkstaden.");
                 }
 
                 else
@@ -86,10 +86,6 @@ namespace ArvOchAbstraktion
                     Console.WriteLine("Hittade inte ett fordon som matchade registreringsnumret.");
                 }
             }
-
-
-
-
         }
 
         #region Metoder för att lägga till fordon

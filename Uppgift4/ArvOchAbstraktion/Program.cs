@@ -84,6 +84,7 @@ namespace ArvOchAbstraktion
 
                             }
                         }
+                        break;
                         #endregion
 
                     case 2:
@@ -132,7 +133,7 @@ namespace ArvOchAbstraktion
 
         #region Metoder för menyer
         /// <summary>
-        /// Går tillbaka till menyn
+        /// Skriver ut text och tar emot en inmatning för att "pausa" programmet.
         /// </summary>
         static void BackToMenu()
         {
