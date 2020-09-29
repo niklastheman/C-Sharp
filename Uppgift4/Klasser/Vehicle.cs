@@ -20,9 +20,14 @@ namespace Klasser
 
         public Vehicle()
         {
-
         }
-        
+
+        #region Metoder
+
+        /// <summary>
+        /// Sätter värdet på milmätaren.
+        /// </summary>
+        /// <param name="lengthDriven">Antal mil i decimaler.</param>
         public void SetOdometer(decimal lengthDriven)
         {
             if (lengthDriven > 0)
@@ -31,25 +36,36 @@ namespace Klasser
             }
         }
 
+        /// <summary>
+        /// Hämtar milmätare.
+        /// </summary>
+        /// <returns>Decimal</returns>
         public decimal GetOdometer()
         {
             return _odometer;
         }
 
+        /// <summary>
+        /// Skriver ut all information om ett fordon.
+        /// </summary>
         public virtual void PrintInfo()
         {
             Console.WriteLine("\t----------");
-            Console.WriteLine($"Typ av fordon: {_typeOfVehicle}" +
+            Console.WriteLine($"Fordonstyp: {_typeOfVehicle}" +
                 $"\nNamn: {ModelName}" +
                 $"\nRegistreringsnummer: {LicensePlate}" +
                 $"\nRegisterades: {RegistrationDate}" +
                 $"\nMilmätare: {_odometer} mil");
         }
 
+        /// <summary>
+        /// Hämtar vad för typ fordonet är.
+        /// </summary>
+        /// <returns>Sträng</returns>
         public string GetVehicleType()
         {
             return _typeOfVehicle;
         }
-
+        #endregion
     }
 }

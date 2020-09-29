@@ -25,6 +25,10 @@ namespace ArvOchAbstraktion
             }
         }
 
+        /// <summary>
+        /// Lägger till ett fordon till verkstaden.
+        /// </summary>
+        /// <param name="vehicle">Typ av fordon</param>
         public void AddVehicle(Vehicle vehicle)
         {
             if (vehicle is Car)
@@ -41,14 +45,51 @@ namespace ArvOchAbstraktion
         }
 
 
-        public void RemoveVehicle(Vehicle vehicle)
+        /// <summary>
+        /// Skriver ut alla fordon i verkstaden och tar bort ett fordon ur verkstaden med hjälp av registreringsnummer.
+        /// </summary>
+        public void RemoveVehicle()
         {
-            ListOfVehicles.Remove(vehicle);
-        }
+            Console.WriteLine("Är du säker på att du vill ta bort ett fordon? j/n: ");
+            var answer = Console.ReadLine().ToLower();
 
-        public int GetNumberOfVehicles()
-        {
-            return ListOfVehicles.Count;
+            if (answer == "j")
+            {
+                foreach (var vehicle in ListOfVehicles)
+                    vehicle.PrintInfo();
+
+                Console.WriteLine("\nSkriv in registreringsnummer på det fordon du vill ta bort: ");
+                string licensePlateToMatch = Console.ReadLine().ToUpper();
+                licensePlateToMatch = licensePlateToMatch.Replace(" ", "");
+
+                Vehicle vehicleToRemove = null;
+
+                foreach (var vehicle in ListOfVehicles)
+                {
+                    if (licensePlateToMatch == vehicle.LicensePlate)
+                    {
+                        vehicleToRemove = vehicle;
+                        break;
+                    }
+                }
+
+                if (vehicleToRemove != null)
+                {
+                    ListOfVehicles.Remove(vehicleToRemove);
+                    Console.WriteLine($"Fordon: {vehicleToRemove.GetVehicleType()} " +
+                        $"med registreringsnummer: {vehicleToRemove.LicensePlate}" +
+                        $"\ntogs bort från verkstaden.");
+                }
+
+                else
+                {
+                    Console.WriteLine("Hittade inte ett fordon som matchade registreringsnumret.");
+                }
+            }
+
+
+
+
         }
 
         #region Metoder för att lägga till fordon
@@ -71,14 +112,14 @@ namespace ArvOchAbstraktion
                 var isAnswering = true;
                 do
                 {
-                    Console.Write("Stämmer dessa uppgifter? j/n: ");
+                    Console.Write("\nStämmer dessa uppgifter? j/n: ");
                     var answer = Console.ReadLine().ToLower();
                     if (answer == "j")
                     {
                         isAdding = false;
                         isAnswering = false;
                         ListOfVehicles.Add(car);
-                        Console.WriteLine("Bil tillagd!");
+                        Console.WriteLine("\nBil tillagd!");
                         break;
                     }
 
@@ -107,14 +148,14 @@ namespace ArvOchAbstraktion
                 var isAnswering = true;
                 do
                 {
-                    Console.Write("Stämmer dessa uppgifter? j/n: ");
+                    Console.Write("\nStämmer dessa uppgifter? j/n: ");
                     var answer = Console.ReadLine().ToLower();
                     if (answer == "j")
                     {
                         isAdding = false;
                         isAnswering = false;
                         ListOfVehicles.Add(motorcycle);
-                        Console.WriteLine("Motorcykel tillagd!");
+                        Console.WriteLine("\nMotorcykel tillagd!");
                         break;
                     }
 
@@ -144,7 +185,7 @@ namespace ArvOchAbstraktion
                 var isAnswering = true;
                 do
                 {
-                    Console.Write("Stämmer dessa uppgifter? j/n: ");
+                    Console.Write("\nStämmer dessa uppgifter? j/n: ");
                     var answer = Console.ReadLine().ToLower();
                     if (answer == "j")
                     {
@@ -186,7 +227,7 @@ namespace ArvOchAbstraktion
                 var isAnswering = true;
                 do
                 {
-                    Console.Write("Stämmer dessa uppgifter? j/n: ");
+                    Console.Write("\nStämmer dessa uppgifter? j/n: ");
                     var answer = Console.ReadLine().ToLower();
                     if (answer == "j")
                     {

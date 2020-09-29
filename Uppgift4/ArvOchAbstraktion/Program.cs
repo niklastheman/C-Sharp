@@ -32,7 +32,6 @@ namespace ArvOchAbstraktion
 
                             switch (menuInput)
                             {
-                                // Bil
                                 case 1:
                                     #region Lägg till bil
 
@@ -43,7 +42,6 @@ namespace ArvOchAbstraktion
                                     break;
                                 #endregion
 
-                                // Motorcykel
                                 case 2:
                                     #region Lägg till motorcykel
 
@@ -54,7 +52,6 @@ namespace ArvOchAbstraktion
                                     break;
                                 #endregion
 
-                                //Lastbil
                                 case 3:
                                     #region Lägg till lastbil
 
@@ -65,7 +62,6 @@ namespace ArvOchAbstraktion
                                     break;
                                 #endregion
 
-                                //Buss
                                 case 4:
                                     #region Lägg till buss
 
@@ -76,8 +72,8 @@ namespace ArvOchAbstraktion
                                     break;
                                 #endregion
 
-                                //Tillbaka till huvudmenyn
                                 case 5:
+                                    // Tillbaka till huvudmenyn
                                     isAddingVehicle = false;
                                     break;
 
@@ -89,44 +85,17 @@ namespace ArvOchAbstraktion
                             }
                         }
                         #endregion
-                        break;
 
                     case 2:
                         #region Ta bort fordon
 
-                        foreach (var vehicle in verkstad.ListOfVehicles)
-                        {
-                            Console.WriteLine($"\nFordonstyp: {vehicle.GetVehicleType()}" +
-                                $"\nModell: {vehicle.ModelName}" +
-                                $"\nRegistreringsnummer: {vehicle.LicensePlate}");
-                        }
-
-                        Console.WriteLine("\nSkriv in registreringsnummer på det fordon du vill ta bort: ");
-                        string licensePlateToMatch = Console.ReadLine().ToUpper();
-                        licensePlateToMatch = licensePlateToMatch.Replace(" ", "");
-
-                        Vehicle vehicleToRemove = null;
-
-                        foreach (var vehicle in verkstad.ListOfVehicles)
-                        {
-                            if (licensePlateToMatch == vehicle.LicensePlate)
-                            {
-                                vehicleToRemove = vehicle;
-                                break;
-                            }
-                        }
-
-                        if (vehicleToRemove != null)
-                        {
-                            verkstad.ListOfVehicles.Remove(vehicleToRemove);
-                            Console.WriteLine($"Tog bort fordonet av typen {vehicleToRemove.GetVehicleType()} " +
-                                $"med registreringsnummer {vehicleToRemove.LicensePlate}");
-                        }
+                        Console.Clear();
+                        Console.WriteLine("---- TA BORT FORDON ----");
+                        if (verkstad.ListOfVehicles.Count == 0)
+                            Console.WriteLine("Det finns inga fordon inne i verkstaden. ");
 
                         else
-                        {
-                            Console.WriteLine("Hittade inte ett fordon som matchade registreringsnumret.");
-                        }
+                            verkstad.RemoveVehicle();
 
                         BackToMenu();
                         #endregion
@@ -134,22 +103,22 @@ namespace ArvOchAbstraktion
 
                     case 3:
                         //Skriv ut alla fordon i verkstaden
+                        Console.Clear();
                         foreach (var vehicle in verkstad.ListOfVehicles)
-                        {
                             vehicle.PrintInfo();
-                        }
-
 
                         BackToMenu();
                         break;
 
                     case 4:
                         #region Avsluta program
+
                         Console.WriteLine("Avslutar program...");
                         Thread.Sleep(1000);
                         isRunning = false;
                         break;
-                    #endregion
+                        
+                        #endregion
 
                     default:
                         Console.WriteLine("Du måste välja ur alternativen.");
