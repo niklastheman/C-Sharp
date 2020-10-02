@@ -10,9 +10,9 @@ namespace ArvOchAbstraktion
     {
         static void Main(string[] args)
         {
-            IVerkstad verkstad = new Verkstad();
+            IVerkstad verkstad = new VerkstadV2();
 
-            
+
             var isRunning = true;
             while (isRunning)
             {
@@ -37,7 +37,7 @@ namespace ArvOchAbstraktion
                                     #region Lägg till bil
 
                                     Console.WriteLine("----LÄGG TILL BIL");
-                                    
+
                                     var car = InputHelper.CreateCar();
                                     verkstad.AddVehicle(car);
 
@@ -49,13 +49,17 @@ namespace ArvOchAbstraktion
 
                                 case 2:
                                     #region Lägg till motorcykel
-                                    
+
                                     Console.WriteLine("----LÄGG TILL MOTORCYKEL----");
 
                                     var motorcycle = InputHelper.CreateMotorcycle();
-                                    verkstad.AddVehicle(motorcycle);
+                                    var tryToAddVehicle = verkstad.AddVehicle(motorcycle);
+                                    if (tryToAddVehicle)
+                                        Console.WriteLine("\nMotorcykel tillagd i verkstaden!");
 
-                                    Console.WriteLine("\nMotorcykel tillagd i verkstaden!");
+                                    // Den här koden körs endast i VerkstadV2 klassen
+                                    else
+                                        Console.WriteLine("\nDen här verkstaden kan bara ta emot mopeder. De får ha en maxhastighet på 50km/h.");
 
                                     BackToMenu();
                                     break;
@@ -67,9 +71,14 @@ namespace ArvOchAbstraktion
                                     Console.WriteLine("----LÄGG TILL LASTBIL----");
 
                                     var truck = InputHelper.CreateTruck();
-                                    verkstad.AddVehicle(truck);
+                                    tryToAddVehicle = verkstad.AddVehicle(truck);
 
-                                    Console.WriteLine("\nLastbil tillagd i verkstaden!");
+                                    if (tryToAddVehicle)
+                                        Console.WriteLine("\nLastbil tillagd i verkstaden!");
+
+                                    // Den här koden körs endast i VerkstadV2 klassen
+                                    else
+                                        Console.WriteLine("\nDen här verkstaden tar bara emot lastbilar vars maxlast är 2 ton.");
 
                                     BackToMenu();
                                     break;
@@ -81,9 +90,19 @@ namespace ArvOchAbstraktion
                                     Console.WriteLine("----LÄGG TILL BUSS----");
 
                                     var bus = InputHelper.CreateBus();
-                                    verkstad.AddVehicle(bus);
+                                    tryToAddVehicle = verkstad.AddVehicle(bus);
 
+                                    if (tryToAddVehicle)
+                                    {
                                     Console.WriteLine("\nBuss tillagd i verkstaden!");
+
+                                    }
+
+                                    // Den här koden körs endast i VerkstadV2 klassen
+                                    else
+                                    {
+                                        Console.WriteLine("\nDen här verkstaden tar bara emot minibussar. Max antal passagerare får vara 8 st.");
+                                    }
                                     BackToMenu();
                                     break;
                                 #endregion
@@ -101,7 +120,7 @@ namespace ArvOchAbstraktion
                             }
                         }
                         break;
-                        #endregion
+                    #endregion
 
                     case 2:
                         #region Ta bort fordon
@@ -111,14 +130,14 @@ namespace ArvOchAbstraktion
 
                         if (verkstad.GetListOfVehicles().Count == 0)
                             Console.WriteLine("Det finns inga fordon i verkstaden.");
-                        
+
                         else
                         {
                             var vehicleToRemove = InputHelper.FindVehicleToRemove(verkstad);
-                            
+
                             if (vehicleToRemove != null)
                                 verkstad.RemoveVehicle(vehicleToRemove);
-   
+
                         }
 
                         BackToMenu();
@@ -135,7 +154,7 @@ namespace ArvOchAbstraktion
                         else
                             foreach (var vehicle in verkstad.GetListOfVehicles())
                                 vehicle.PrintInfo();
-                        
+
                         BackToMenu();
                         break;
 
@@ -146,8 +165,8 @@ namespace ArvOchAbstraktion
                         Thread.Sleep(1000);
                         isRunning = false;
                         break;
-                        
-                        #endregion
+
+                    #endregion
 
                     default:
                         Console.WriteLine("Du måste välja ur alternativen.");
@@ -159,8 +178,8 @@ namespace ArvOchAbstraktion
 
         }
 
-        
-        
+
+
 
         #region Metoder för utskrift
         /// <summary>

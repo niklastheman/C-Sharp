@@ -1,12 +1,15 @@
 ﻿using Klasser;
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 
 namespace ArvOchAbstraktion
 {
     public class Verkstad : IVerkstad
     {
+        
+
         private List<Vehicle> _listOfVehicles;
         public List<Vehicle> ListOfVehicles
         {
@@ -31,9 +34,12 @@ namespace ArvOchAbstraktion
         /// Lägger till ett fordon till verkstaden.
         /// </summary>
         /// <param name="vehicle">Typ av fordon</param>
-        public void AddVehicle(Vehicle vehicle)
+        public bool AddVehicle(Vehicle vehicle)
         {
+            var addedVehicle = true;
             ListOfVehicles.Add(vehicle);
+
+            return addedVehicle;
         }
 
         /// <summary>
@@ -42,7 +48,7 @@ namespace ArvOchAbstraktion
         public void RemoveVehicle(Vehicle vehicle)
         {
             ListOfVehicles.Remove(vehicle);
-            
+
             Console.WriteLine($"Fordon: {vehicle.GetVehicleType()} " +
                 $"med registreringsnummer: {vehicle.LicensePlate}" +
                 $"\nTogs bort från verkstaden.");
@@ -54,6 +60,8 @@ namespace ArvOchAbstraktion
         {
             return ListOfVehicles;
         }
+
+
 
     }
 }

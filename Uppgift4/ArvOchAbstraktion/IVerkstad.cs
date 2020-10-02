@@ -7,7 +7,7 @@ namespace ArvOchAbstraktion
 {
     public interface IVerkstad
     { 
-        void AddVehicle(Vehicle vehicle);
+        bool AddVehicle(Vehicle vehicle);
         void RemoveVehicle(Vehicle vehicle);
 
         List<Vehicle> GetListOfVehicles();
