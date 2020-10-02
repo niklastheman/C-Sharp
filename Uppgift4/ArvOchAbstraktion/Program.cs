@@ -10,8 +10,9 @@ namespace ArvOchAbstraktion
     {
         static void Main(string[] args)
         {
-            Verkstad verkstad = new Verkstad();
+            IVerkstad verkstad = new Verkstad();
 
+            
             var isRunning = true;
             while (isRunning)
             {
@@ -35,8 +36,12 @@ namespace ArvOchAbstraktion
                                 case 1:
                                     #region Lägg till bil
 
-                                    var car = new Car();
+                                    Console.WriteLine("----LÄGG TILL BIL");
+                                    
+                                    var car = InputHelper.CreateCar();
                                     verkstad.AddVehicle(car);
+
+                                    Console.WriteLine("\nBil tillagd i verkstaden!");
 
                                     BackToMenu();
                                     break;
@@ -44,9 +49,13 @@ namespace ArvOchAbstraktion
 
                                 case 2:
                                     #region Lägg till motorcykel
+                                    
+                                    Console.WriteLine("----LÄGG TILL MOTORCYKEL----");
 
-                                    var motorcycle = new Motorcycle();
+                                    var motorcycle = InputHelper.CreateMotorcycle();
                                     verkstad.AddVehicle(motorcycle);
+
+                                    Console.WriteLine("\nMotorcykel tillagd i verkstaden!");
 
                                     BackToMenu();
                                     break;
@@ -55,8 +64,12 @@ namespace ArvOchAbstraktion
                                 case 3:
                                     #region Lägg till lastbil
 
-                                    var truck = new Truck();
+                                    Console.WriteLine("----LÄGG TILL LASTBIL----");
+
+                                    var truck = InputHelper.CreateTruck();
                                     verkstad.AddVehicle(truck);
+
+                                    Console.WriteLine("\nLastbil tillagd i verkstaden!");
 
                                     BackToMenu();
                                     break;
@@ -65,9 +78,12 @@ namespace ArvOchAbstraktion
                                 case 4:
                                     #region Lägg till buss
 
-                                    var bus = new Bus();
+                                    Console.WriteLine("----LÄGG TILL BUSS----");
+
+                                    var bus = InputHelper.CreateBus();
                                     verkstad.AddVehicle(bus);
 
+                                    Console.WriteLine("\nBuss tillagd i verkstaden!");
                                     BackToMenu();
                                     break;
                                 #endregion
@@ -92,11 +108,18 @@ namespace ArvOchAbstraktion
 
                         Console.Clear();
                         Console.WriteLine("---- TA BORT FORDON ----");
-                        if (verkstad.ListOfVehicles.Count == 0)
-                            Console.WriteLine("Det finns inga fordon inne i verkstaden. ");
 
+                        if (verkstad.GetListOfVehicles().Count == 0)
+                            Console.WriteLine("Det finns inga fordon i verkstaden.");
+                        
                         else
-                            verkstad.RemoveVehicle();
+                        {
+                            var vehicleToRemove = InputHelper.FindVehicleToRemove(verkstad);
+                            
+                            if (vehicleToRemove != null)
+                                verkstad.RemoveVehicle(vehicleToRemove);
+   
+                        }
 
                         BackToMenu();
                         #endregion
@@ -105,9 +128,14 @@ namespace ArvOchAbstraktion
                     case 3:
                         //Skriv ut alla fordon i verkstaden
                         Console.Clear();
-                        foreach (var vehicle in verkstad.ListOfVehicles)
-                            vehicle.PrintInfo();
 
+                        if (verkstad.GetListOfVehicles().Count == 0)
+                            Console.WriteLine("Det finns inga fordon i verkstaden.");
+
+                        else
+                            foreach (var vehicle in verkstad.GetListOfVehicles())
+                                vehicle.PrintInfo();
+                        
                         BackToMenu();
                         break;
 
@@ -131,7 +159,10 @@ namespace ArvOchAbstraktion
 
         }
 
-        #region Metoder för menyer
+        
+        
+
+        #region Metoder för utskrift
         /// <summary>
         /// Skriver ut text och tar emot en inmatning för att "pausa" programmet.
         /// </summary>
@@ -167,7 +198,7 @@ namespace ArvOchAbstraktion
                             "\n[4] Buss" +
                             "\n[5] Tillbaka till huvudmenyn");
         }
-        #endregion
 
+        #endregion
     }
 }

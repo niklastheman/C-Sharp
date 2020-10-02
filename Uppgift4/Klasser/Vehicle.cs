@@ -11,12 +11,12 @@ namespace Klasser
         public string LicensePlate { get; set; }
         public string RegistrationDate { get; set; }
 
-        public Vehicle(string modelName, string licensePlate, string registrationDate)
-        {
-            ModelName = modelName;
-            LicensePlate = licensePlate;
-            RegistrationDate = registrationDate;
-        }
+        //public Vehicle(string modelName, string licensePlate, string registrationDate)
+        //{
+        //    ModelName = modelName;
+        //    LicensePlate = licensePlate;
+        //    RegistrationDate = registrationDate;
+        //}
 
         public Vehicle()
         {

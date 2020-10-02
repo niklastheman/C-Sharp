@@ -6,9 +6,11 @@ using System.Text;
 namespace ArvOchAbstraktion
 {
     public interface IVerkstad
-    {
+    { 
         void AddVehicle(Vehicle vehicle);
-        void RemoveVehicle();
+        void RemoveVehicle(Vehicle vehicle);
+
+        List<Vehicle> GetListOfVehicles();
 
     }
 }

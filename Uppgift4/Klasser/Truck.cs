@@ -8,12 +8,6 @@ namespace Klasser
     {
         public int MaxLoadInKG { get; set; }
 
-        //public Truck(string modelName, string licensePlate, string registrationDate, int maxLoadInKG) : base(modelName, licensePlate, registrationDate)
-        //{
-        //    MaxLoadInKG = maxLoadInKG;
-        //    _typeOfVehicle = "Lastbil";
-        //}
-
         public Truck()
         {
             _typeOfVehicle = "Lastbil";

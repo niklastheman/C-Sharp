@@ -8,13 +8,6 @@ namespace Klasser
     {
         public int MaxSpeed { get; set; }
 
-
-        //public Motorcycle(string modelName, string licensePlate, string registrationDate, int maxSpeed) : base(modelName, licensePlate, registrationDate)
-        //{
-        //    MaxSpeed = maxSpeed;
-        //    _typeOfVehicle = "Motorcykel";
-        //}
-
         public Motorcycle()
         {
             _typeOfVehicle = "Motorcykel";

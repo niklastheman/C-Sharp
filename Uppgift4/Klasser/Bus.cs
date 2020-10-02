@@ -8,12 +8,6 @@ namespace Klasser
     {
         public int MaxAmountOfPassengers { get; set; }
 
-        //public Bus(string modelName, string licensePlate, string registrationDate, int maxAmountOfPassengers) : base(modelName, licensePlate, registrationDate)
-        //{
-        //    MaxAmountOfPassengers = maxAmountOfPassengers;
-        //    _typeOfVehicle = "Buss";
-        //}
-
         public Bus()
         {
             _typeOfVehicle = "Buss";
