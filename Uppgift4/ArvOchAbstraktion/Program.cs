@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading;
 
 namespace ArvOchAbstraktion
@@ -10,7 +11,7 @@ namespace ArvOchAbstraktion
     {
         static void Main(string[] args)
         {
-            IVerkstad verkstad = new VerkstadV2();
+            IVerkstad verkstad = new Verkstad();
 
 
             var isRunning = true;
@@ -37,8 +38,8 @@ namespace ArvOchAbstraktion
                                     #region Lägg till bil
 
                                     Console.WriteLine("----LÄGG TILL BIL");
-
-                                    var car = InputHelper.CreateCar();
+                                    Car car = new Car();
+                                    InputHelper.CreateVehicle(car);
                                     verkstad.AddVehicle(car);
 
                                     Console.WriteLine("\nBil tillagd i verkstaden!");
@@ -78,7 +79,7 @@ namespace ArvOchAbstraktion
 
                                     // Den här koden körs endast i VerkstadV2 klassen
                                     else
-                                        Console.WriteLine("\nDen här verkstaden tar bara emot lastbilar vars maxlast är 2 ton.");
+                                        Console.WriteLine("\nDen här verkstaden tar bara emot lätta lastbilar vars maxlast är 2 ton.");
 
                                     BackToMenu();
                                     break;
@@ -93,16 +94,12 @@ namespace ArvOchAbstraktion
                                     tryToAddVehicle = verkstad.AddVehicle(bus);
 
                                     if (tryToAddVehicle)
-                                    {
-                                    Console.WriteLine("\nBuss tillagd i verkstaden!");
-
-                                    }
+                                        Console.WriteLine("\nBuss tillagd i verkstaden!");
 
                                     // Den här koden körs endast i VerkstadV2 klassen
                                     else
-                                    {
                                         Console.WriteLine("\nDen här verkstaden tar bara emot minibussar. Max antal passagerare får vara 8 st.");
-                                    }
+
                                     BackToMenu();
                                     break;
                                 #endregion
@@ -153,7 +150,7 @@ namespace ArvOchAbstraktion
 
                         else
                             foreach (var vehicle in verkstad.GetListOfVehicles())
-                                vehicle.PrintInfo();
+                                InputHelper.PrintInfo(vehicle);
 
                         BackToMenu();
                         break;
@@ -217,6 +214,19 @@ namespace ArvOchAbstraktion
                             "\n[4] Buss" +
                             "\n[5] Tillbaka till huvudmenyn");
         }
+
+        //public static string PropertyList(this object obj)
+        //{
+        //    var properties = obj.GetType().GetProperties();
+
+        //    var stringBuilder = new StringBuilder();
+        //    foreach (var prop in properties)
+        //    {
+        //        stringBuilder.AppendLine($"{prop.Name}: {prop.GetValue(obj, null)}");
+        //    }
+
+        //    return stringBuilder.ToString();
+        //}
 
         #endregion
     }

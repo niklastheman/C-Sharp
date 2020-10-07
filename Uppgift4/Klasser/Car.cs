@@ -10,21 +10,22 @@ namespace Klasser
 
         public Car()
         {
-            _typeOfVehicle = "Bil";
+            TypeOfVehicle = "Bil";
         }
 
         /// <summary>
         /// Skriver ut all information om <b>bilen.</b> 
         /// <b>Skriver ut om bilen har dragkrok</b>
         /// </summary>
-        public override void PrintInfo()
-        {
-            base.PrintInfo();
-            if (HasTowbar)
-                Console.WriteLine("Dragkrok: Ja");
-            else
-                Console.WriteLine("Dragkrok: Nej");
-        }
+        
+        //public override void PrintInfo()
+        //{
+        //    base.PrintInfo();
+        //    if (HasTowbar)
+        //        Console.WriteLine("Dragkrok: Ja");
+        //    else
+        //        Console.WriteLine("Dragkrok: Nej");
+        //}
 
     }
 }

@@ -141,7 +141,8 @@ namespace ArvOchAbstraktion
         #endregion
 
 
-        #region Metoder för att skapa  fordon
+        #region Metoder för att skapa fordon
+       
         public static Vehicle CreateCar()
         {
             var car = new Car();
@@ -158,7 +159,7 @@ namespace ArvOchAbstraktion
                 var lengthDriven = ReadDecimal("Mata in hur många mil fordonet har gått: ");
                 car.SetOdometer(lengthDriven);
 
-                car.PrintInfo();
+                PrintInfo(car);
                 var isAnswering = true;
                 do
                 {
@@ -173,6 +174,10 @@ namespace ArvOchAbstraktion
 
                     else if (string.IsNullOrEmpty(answer))
                         Console.WriteLine("Du måste svara.");
+
+                    else
+                        isAnswering = false;
+
                 } while (isAnswering);
 
             }
@@ -188,16 +193,21 @@ namespace ArvOchAbstraktion
             while (isAdding)
             {
                 Console.Clear();
-                
+
                 motorcycle.ModelName = ReadName("Mata in modellnamn: ");
                 motorcycle.LicensePlate = ReadLicensePlate("Mata in registreringsnummer: ");
                 motorcycle.RegistrationDate = DateTime.Now.ToString("yyyy/MM/dd");
                 motorcycle.MaxSpeed = ReadInteger("Mata in maxhastighet i km/h: ");
+                if (motorcycle.MaxSpeed > 50)
+                    motorcycle.TypeOfVehicle = "Motorcykel";
+
+                else
+                    motorcycle.TypeOfVehicle = "Moped";
 
                 var lengthDriven = ReadDecimal("Mata in hur många mil fordonet har gått: ");
                 motorcycle.SetOdometer(lengthDriven);
 
-                motorcycle.PrintInfo();
+                PrintInfo(motorcycle);
                 var isAnswering = true;
                 do
                 {
@@ -212,6 +222,10 @@ namespace ArvOchAbstraktion
 
                     else if (string.IsNullOrEmpty(answer))
                         Console.WriteLine("Du måste svara.");
+
+                    else
+                        isAnswering = false;
+
                 } while (isAnswering);
             }
 
@@ -226,7 +240,7 @@ namespace ArvOchAbstraktion
             while (isAdding)
             {
                 Console.Clear();
-                
+
                 truck.ModelName = ReadName("Mata in modellnamn: ");
                 truck.LicensePlate = ReadLicensePlate("Mata in registreringsnummer: ");
                 truck.RegistrationDate = DateTime.Now.ToString("yyyy/MM/dd");
@@ -235,7 +249,7 @@ namespace ArvOchAbstraktion
                 var lengthDriven = ReadDecimal("Mata in hur många mil fordonet har gått: ");
                 truck.SetOdometer(lengthDriven);
 
-                truck.PrintInfo();
+                PrintInfo(truck);
                 var isAnswering = true;
                 do
                 {
@@ -252,10 +266,8 @@ namespace ArvOchAbstraktion
                         Console.WriteLine("Du måste svara.");
 
                     else
-                    {
                         isAnswering = false;
-                        break;
-                    }
+
                 } while (isAnswering);
             }
 
@@ -270,16 +282,21 @@ namespace ArvOchAbstraktion
             while (isAdding)
             {
                 Console.Clear();
-                
+
                 bus.ModelName = ReadName("Mata in modellnamn: ");
                 bus.LicensePlate = ReadLicensePlate("Mata in registreringsnummer: ");
                 bus.RegistrationDate = DateTime.Now.ToString("yyyy/MM/dd");
                 bus.MaxAmountOfPassengers = ReadInteger("Mata in max antal passagerare: ");
+                if (bus.MaxAmountOfPassengers > 8)
+                    bus.TypeOfVehicle = "Buss";
+
+                else
+                    bus.TypeOfVehicle = "Minibuss";
 
                 var lengthDriven = ReadDecimal("Mata in hur många mil fordonet har gått: ");
                 bus.SetOdometer(lengthDriven);
 
-                bus.PrintInfo();
+                PrintInfo(bus);
                 var isAnswering = true;
                 do
                 {
@@ -296,10 +313,8 @@ namespace ArvOchAbstraktion
                         Console.WriteLine("Du måste svara.");
 
                     else
-                    {
                         isAnswering = false;
-                        break;
-                    }
+
                 } while (isAnswering);
             }
 
@@ -326,7 +341,7 @@ namespace ArvOchAbstraktion
             if (answer == "j")
             {
                 foreach (var vehicle in verkstad.GetListOfVehicles())
-                    vehicle.PrintInfo();
+                    PrintInfo(vehicle);
 
                 Console.WriteLine("\nSkriv in registreringsnummer på det fordon du vill ta bort: ");
                 string licensePlateToMatch = Console.ReadLine().ToUpper();
@@ -351,6 +366,45 @@ namespace ArvOchAbstraktion
             }
 
             return vehicleToRemove;
+        }
+
+        public static void PrintInfo(Vehicle vehicle)
+        {
+            Console.WriteLine("\t----------");
+            Console.WriteLine($"Fordonstyp: {vehicle.TypeOfVehicle}" +
+                $"\nNamn: {vehicle.ModelName}" +
+                $"\nRegistreringsnummer: {vehicle.LicensePlate}" +
+                $"\nRegisterades: {vehicle.RegistrationDate}" +
+                $"\nMilmätare: {vehicle.GetOdometer()} mil");
+
+            if (vehicle is Car)
+            {
+                var car = vehicle as Car;
+                if (car.HasTowbar)
+                    Console.WriteLine("Dragkrok: Ja");
+
+                else
+                    Console.WriteLine("Dragkrok: Nej");
+            }
+
+            else if (vehicle is Motorcycle)
+            {
+                var motorcycle = vehicle as Motorcycle;
+                Console.WriteLine($"Maxhastighet: {motorcycle.MaxSpeed}");
+            }
+
+            else if (vehicle is Truck)
+            {
+                var truck = vehicle as Truck;
+                Console.WriteLine($"Maxlast i kg: {truck.MaxLoadInKG}");
+            }
+
+            else
+            {
+                var bus = vehicle as Bus;
+                Console.WriteLine($"Max antal passagerare: {bus.MaxAmountOfPassengers}");
+            }
+
         }
 
     }

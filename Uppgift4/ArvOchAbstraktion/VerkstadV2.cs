@@ -7,7 +7,7 @@ namespace Klasser
 {
     /// <summary>
     /// Den här verkstade kan:
-    /// <br>-Ta emot lättare lastbilar (maxlast < 2000)</br>
+    /// <br>-Ta emot lättare lastbilar (maxlast <= 2000)</br>
     /// <br>-Ta emot mopeder (motorcykelns maxhastighet är max 50km/h)</br>
     /// <br>-Ta emot minibussar (maxantal passagerare < 8)</br>
     /// </summary>
@@ -39,17 +39,16 @@ namespace Klasser
         /// <param name="vehicle">Typ av fordon</param>
         public bool AddVehicle(Vehicle vehicle)
         {
-            var tryToAddVehicle = false;
+            var addedVehicle = false;
 
-            _isOkayToAdd = IsOkayToAdd(vehicle);
+            IsOkayToAdd(vehicle);
             if (_isOkayToAdd)
             {
                 ListOfVehicles.Add(vehicle);
-                tryToAddVehicle = true;
+                addedVehicle = true;
             }
 
-            return tryToAddVehicle;
-
+            return addedVehicle;
         }
 
         /// <summary>
@@ -59,7 +58,7 @@ namespace Klasser
         {
             ListOfVehicles.Remove(vehicle);
 
-            Console.WriteLine($"Fordon: {vehicle.GetVehicleType()} " +
+            Console.WriteLine($"Fordon: {vehicle.TypeOfVehicle} " +
                 $"med registreringsnummer: {vehicle.LicensePlate}" +
                 $"\nTogs bort från verkstaden.");
         }
@@ -73,7 +72,7 @@ namespace Klasser
         {
             if (vehicle is Truck)
             {
-                var truck = vehicle as Truck;
+               var truck = vehicle as Truck;
 
                 if (truck.MaxLoadInKG <= 2000)
                 _isOkayToAdd = true;
@@ -82,7 +81,7 @@ namespace Klasser
                     _isOkayToAdd = false;
             }
 
-            if (vehicle is Motorcycle)
+            else if (vehicle is Motorcycle)
             {
                 var motorcycle = vehicle as Motorcycle;
 
@@ -93,7 +92,7 @@ namespace Klasser
                     _isOkayToAdd = false;
             }
 
-            if (vehicle is Bus)
+            else if (vehicle is Bus)
             {
                 var bus = vehicle as Bus;
 

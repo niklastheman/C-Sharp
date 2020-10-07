@@ -36,10 +36,9 @@ namespace ArvOchAbstraktion
         /// <param name="vehicle">Typ av fordon</param>
         public bool AddVehicle(Vehicle vehicle)
         {
-            var addedVehicle = true;
             ListOfVehicles.Add(vehicle);
 
-            return addedVehicle;
+            return true;
         }
 
         /// <summary>
@@ -49,7 +48,7 @@ namespace ArvOchAbstraktion
         {
             ListOfVehicles.Remove(vehicle);
 
-            Console.WriteLine($"Fordon: {vehicle.GetVehicleType()} " +
+            Console.WriteLine($"Fordon: {vehicle.TypeOfVehicle} " +
                 $"med registreringsnummer: {vehicle.LicensePlate}" +
                 $"\nTogs bort från verkstaden.");
         }

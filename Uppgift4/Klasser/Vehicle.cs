@@ -6,7 +6,7 @@ namespace Klasser
     {
         protected decimal _odometer;
         
-        protected string _typeOfVehicle;
+        public string TypeOfVehicle { get; set; }
         public string ModelName { get; set; }
         public string LicensePlate { get; set; }
         public string RegistrationDate { get; set; }
@@ -18,9 +18,9 @@ namespace Klasser
         //    RegistrationDate = registrationDate;
         //}
 
-        public Vehicle()
-        {
-        }
+        //public Vehicle()
+        //{
+        //}
 
         #region Metoder
 
@@ -48,24 +48,25 @@ namespace Klasser
         /// <summary>
         /// Skriver ut all information om ett fordon.
         /// </summary>
-        public virtual void PrintInfo()
-        {
-            Console.WriteLine("\t----------");
-            Console.WriteLine($"Fordonstyp: {_typeOfVehicle}" +
-                $"\nNamn: {ModelName}" +
-                $"\nRegistreringsnummer: {LicensePlate}" +
-                $"\nRegisterades: {RegistrationDate}" +
-                $"\nMilmätare: {_odometer} mil");
-        }
+        //public virtual void PrintInfo()
+        //{
+        //    Console.WriteLine("\t----------");
+        //    Console.WriteLine($"Fordonstyp: {TypeOfVehicle}" +
+        //        $"\nNamn: {ModelName}" +
+        //        $"\nRegistreringsnummer: {LicensePlate}" +
+        //        $"\nRegisterades: {RegistrationDate}" +
+        //        $"\nMilmätare: {_odometer} mil");
+        //}
 
         /// <summary>
         /// Hämtar vad för typ fordonet är.
         /// </summary>
         /// <returns>Sträng</returns>
-        public string GetVehicleType()
-        {
-            return _typeOfVehicle;
-        }
+        //public string GetVehicleType()
+        //{
+        //    return TypeOfVehicle;
+        //}
+
         #endregion
     }
 }
