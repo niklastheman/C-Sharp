@@ -91,7 +91,7 @@ Exempelvis kan det finnas en komponent av typen "Däck" som är kopplade till fo
 
 ### Användare:
 
-Det finns två typer av användare. Bosse och alla andra. Bosse kan lägga till och ta bort användare. Det kan ingen annan. Skillnaden mellan Bosse och övriga användare kan lösas med arv men måste inte göra det. Vi skiljer på användare och Mekaniker (se nedan). En användare (som inte är admin) har ett samband till en mekaniker i systemet. Det är dock inte nödvändigt vis så att en mekaniker har en användare kopplat till sig. Bosse skall således kunna lägga till mekaniker utan att koppla användare till dem.
+Det finns två typer av användare. Bosse och alla andra. Bosse kan lägga till och ta bort användare. Det kan ingen annan. Skillnaden mellan Bosse och övriga användare kan lösas med arv men måste inte göra det. Vi skiljer på användare och Mekaniker (se nedan). En användare (som inte är admin) har ett samband till en mekaniker i systemet. Det är dock inte nödvändigtvis så att en mekaniker har en användare kopplat till sig. Bosse skall således kunna lägga till mekaniker utan att koppla användare till dem. Två användare med samma användarnamn skall inte vara möjligt att lägga till i systemet.
 
 En användare består av ett användarnamn *, lösenord *,  någonting som identifierar vilken mekaniker som användare tillhör (gäller inte Bosse).
 
