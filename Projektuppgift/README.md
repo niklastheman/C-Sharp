@@ -38,7 +38,7 @@ Systemet ska utvecklas i C# där WPF ska användas för det grafiska gränssnitt
 1. Asynkron programmering
       - Programmet skall använda sig av async/await på lämpligt vis
 2. Generisk programmering
-      - Programmet skall använda sig av generisk-programmering i datalagret
+      - Programmet skall använda sig av generisk-programmering i datalagret. (DAL mappen i projekt-template, C#)
 3. Extension-metoder
       - Programmet skall använda sig av en extension-metod på lämpligt vis. Exempelvis genom att bygga en funktion som kan användas på en sträng-variabel
 
@@ -53,7 +53,7 @@ Funktioner för Admin:
 3. Man ska kunna lägga till, ta bort och ändra ärenden.
 4. Man ska kunna ändra status på ett ärende från pågende till klar. Detta kan man endast göra om ärendet redan blivit tilldelat en mekaniker.
 5. Man ska kunna se vilka bilmekaniker som kan utföra ett ärende baserat på mekanikerns kompetenser samt ärendets egenskaper.
-6. Man ska kunna tilldela ett ärende till en lämplig bilmekaniker. Om en bilmekaniker inte finns tillgänglig användaren informeras om det på ett lämpligt sätt.
+6. Man ska kunna tilldela ett ärende till en lämplig bilmekaniker. Om en bilmekaniker inte finns tillgänglig ska användaren informeras om det på ett lämpligt sätt.
 7. En bilmekaniker får endast ha max 2 pågående ärenden samtidigt. Detta innebär att en bilmekaniker som redan har två pågående ärenden inte ska gå att välja för ett nytt ärende trots att denne uppfyller kompetenskraven. Denna mekaniker blir tillgänglig igen endast när någon av de pågående ärendena ändrar status till klar.
 8. Man ska kunna lista alla bilmekaniker i systemet. Om man väljer en bilmekaniker ska man kunna se dess egenskaper och kompetenser. Dessutom ska man kunna se den valda mekanikerns pågående och avslutade ärenden. Förslagsvis är det även härifrån man kan redigera, skapa och ta bort mekaniker.
 9. Man ska kunna lista pågående och avslutade ärenden. Väljer man ett ärende ska man få fram all information om det. Om ärendet är tilldelat en bilmekaniker ska det även gå att se vilken denne är. Förslagsvis är det även härifrån man kan redigera, skapa och ta bort ärenden.
