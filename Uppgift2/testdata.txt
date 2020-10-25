@@ -21,23 +21,37 @@ Testdata 2:
 	Starttid? 00 30 15
 	Måltid? 19 22 35
 	Startnummer? -1
-	Vinnare är startnr: 33
+	Vinnare är startnr: 33	
 	Tim: 18 Min: 52 Sek: 20
 	Antal tävlande: 1
 	Programmet avslutas
 	
 Testdata 3:
 
+	ANDRA PLATS
 	Startnummer? 33
 	Starttid? 17 30 15
 	Måltid? 18 22 35
+	
+	
+	Sluttid: 0 timmar 52 minuter 20 sekunder
+
+	VINNER
 	Startnummer? 14
 	Starttid? 23 35 00
 	Måltid? 0 12 24
+	
+	
+	Sluttid: 0 timmar 37 minuter 24 sekunder
+	
+	SIST
 	Startnummer? 26
 	Starttid? 10 11 12
 	Måltid? 20 21 22
-	Startnummer? -1
+	
+	Sluttid: 10 timmar 10 minuter 10 sekunder
+	
+	
 	Vinnare är startnr: 14
 	Tim: 0 Min: 37 Sek: 24
 	Antal tävlande: 3

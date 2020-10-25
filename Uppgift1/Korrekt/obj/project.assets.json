@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\enikl\\.nuget\\packages\\": {}
+    "C:\\Users\\peter\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\C-Sharp\\Uppgift1\\Korrekt\\Korrekt.csproj",
+      "projectUniqueName": "C:\\GitHub\\C-Sharp\\Uppgift1\\Korrekt\\Korrekt.csproj",
       "projectName": "Korrekt",
-      "projectPath": "C:\\repos\\C-Sharp\\Uppgift1\\Korrekt\\Korrekt.csproj",
-      "packagesPath": "C:\\Users\\enikl\\.nuget\\packages\\",
-      "outputPath": "C:\\repos\\C-Sharp\\Uppgift1\\Korrekt\\obj\\",
+      "projectPath": "C:\\GitHub\\C-Sharp\\Uppgift1\\Korrekt\\Korrekt.csproj",
+      "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
+      "outputPath": "C:\\GitHub\\C-Sharp\\Uppgift1\\Korrekt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\enikl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
