@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\repos\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj": {}
+    "C:\\Users\\tackm\\OneDrive\\Dokument\\GitHub\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj": {}
   },
   "projects": {
-    "C:\\repos\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj": {
+    "C:\\Users\\tackm\\OneDrive\\Dokument\\GitHub\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\repos\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj",
+        "projectUniqueName": "C:\\Users\\tackm\\OneDrive\\Dokument\\GitHub\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj",
         "projectName": "Felande",
-        "projectPath": "C:\\repos\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj",
-        "packagesPath": "C:\\Users\\enikl\\.nuget\\packages\\",
-        "outputPath": "C:\\repos\\C-Sharp\\Uppgift1\\Felande\\obj\\",
+        "projectPath": "C:\\Users\\tackm\\OneDrive\\Dokument\\GitHub\\C-Sharp\\Uppgift1\\Felande\\Felande.csproj",
+        "packagesPath": "C:\\Users\\tackm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tackm\\OneDrive\\Dokument\\GitHub\\C-Sharp\\Uppgift1\\Felande\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\enikl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\tackm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -52,7 +56,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
